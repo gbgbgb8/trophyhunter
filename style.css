@@ -196,12 +196,20 @@ body {
 .control-panel,
 #playbox,
 .game-controls {
-    flex: 0 0 auto;
-    margin: 10px;
+    flex: 1 1 auto;
+    margin: 5px;
 }
 
 @media (min-width: 768px) {
     body {
         flex-direction: row;
+    }
+}
+
+@media (min-width: 768px) {
+    .control-panel,
+    #playbox,
+    .game-controls {
+        width: calc(100% / 3 - 10px);
     }
 }
