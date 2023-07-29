@@ -2,32 +2,54 @@
 <html>
 <head>
     <title>Trophy Hunter</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
     <div class="control-panel">
-        <h1>Trophy Hunter</h1>
-        <h2 id="scoreboard">Score: 0</h2>
-        <input type="checkbox" id="show-instructions">
-        <label for="show-instructions" class="button">?</label>
-        <div id="instructions">
-            <p>Click on the cells to earn points.</p>
-            <p>The number in a cell indicates the number of points you will earn.</p>
-            <p>The color of a cell indicates how many times it can be clicked:</p>
-            <ul>
-                <li>Green: 3 times</li>
-                <li>Yellow: 2 times</li>
-                <li>Red: 1 time</li>
-            </ul>
+        <div class="panel scoreboard">
+            <div id="score">Score: 25</div>
+            <div id="games-played">Games Played: 0</div>
+            <div id="total-points">Total Points: 0</div>
         </div>
     </div>
     <div id="playbox"></div>
-    <div class="game-controls">
-        <button id="start-button" class="button">Start Game</button>
+    <div class="panel game-controls">
+        <button class="button" id="restart">Restart Round</button>
+        <button class="button" id="reload">Reload Game</button>
+        <button class="button" id="show-instructions">?</button>
     </div>
+
+    <!-- New overlay element -->
+    <div class="overlay" id="overlay" style="display: none;">
+        <div class="overlay-text">Congratulations! You found the trophy!</div>
+        <div class="countdown" id="countdown">Next round starts in 3...</div>
+    </div>
+
+    <!-- New popup container for instructions -->
+    <div class="instructions-popup" id="instructions-popup">
+        <div class="instructions-popup-content">
+            <h2>Instructions</h2>
+            <div class="instructions-text">
+                <p>1. Objective: Find the hidden trophy in the grid of cells.</p>
+                <p>2. Scoring: Each time you click on a cell that doesn't contain the trophy, you lose one point. The score starts at 25 points. The goal is to find the trophy with the highest score possible.</p>
+                <p>3. Game Controls:</p>
+                <ul>
+                    <li>Restart Round: Click this button to start a new round. The trophy will be hidden in a different cell, and your score will be reset to 25 points.</li>
+                    <li>Reload Game: Click this button to reload the entire game, starting from the beginning.</li>
+                </ul>
+                <p>4. How to Play:</p>
+                <ul>
+                    <li>Click on any cell in the grid to reveal its content.</li>
+                    <li>As you get closer to the hidden trophy, the cell's color will change. The color indicates the proximity to the trophy, with warmer colors representing closer proximity.</li>
+                    <li>The emojis inside the cells also indicate your proximity to the trophy. The emojis change as you get closer or farther away.</li>
+                </ul>
+                <p>5. Fun Celebration: When you find the trophy, a fun celebration overlay will appear, congratulating you on your discovery. The next round will automatically start after a brief countdown.</p>
+                <!-- Updated dismiss button with clearer text -->
+                <button class="button dismiss-button" id="close-instructions-popup">Got it!</button>
+            </div>
+        </div>
+    </div>
+
     <script src="game.js"></script>
 </body>
-
 </html>
