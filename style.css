@@ -15,6 +15,8 @@ body {
     background-color: var(--color-background);
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     justify-content: space-around;
     flex-wrap: wrap;
     font-family: Arial, sans-serif;
@@ -25,6 +27,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    justify-content: center;
+    align-items: center;
     height: 100vh; /* Force body to take up full viewport height */
     width: 100vw;
 }
@@ -32,6 +36,8 @@ body {
 .control-panel {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     align-items: center;
     gap: var(--spacing);
     width: 90vw;
@@ -132,6 +138,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    justify-content: center;
+    align-items: center;
     z-index: 999;
 }
 
@@ -163,6 +171,8 @@ body {
     overflow-y: auto; /* Add vertical scrolling */
     display: none;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     align-items: center;
 }
 
@@ -196,4 +206,10 @@ body {
 .game-controls {
     flex: 1 1 200px;
     margin: 10px;
+}
+
+@media (min-width: 768px) {
+    body {
+        flex-direction: row;
+    }
 }
