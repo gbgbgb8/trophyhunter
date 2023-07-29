@@ -21,7 +21,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100vh; /* Force body to take up full viewport height */
     width: 100vw;
 }
 
@@ -82,8 +82,8 @@ body {
     grid-gap: 0; /* Remove the gaps between cells */
     width: 100%;
     padding: var(--spacing);
-    max-width: 500px; /* Adjust max-width for better fit on smaller screens */
-    max-height: 500px; /* Adjust max-height for better fit on smaller screens */
+    max-width: 90vw;
+    max-height: 90vh;
 }
 
 .cell {
@@ -96,7 +96,7 @@ body {
     border: 1px solid var(--color-border);
     cursor: pointer;
     user-select: none;
-    font-size: 3rem; /* Adjust the font size here */
+    font-size: calc(1rem + 3vmin); /* Adjust the font size based on the viewport size */
     transition: background-color 0.5s ease;
     position: relative; /* Add a relative position */
 }
