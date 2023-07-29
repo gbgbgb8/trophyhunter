@@ -49,6 +49,7 @@ body {
 
 /* Style the cells */
 .cell {
+    border: 2px solid transparent; /* Add a transparent border to unselected cells */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -78,4 +79,9 @@ body {
 
 .button:active {
     background-color: #004085;
+}
+
+
+.cell.selected {
+    border-color: #333; /* Change the border color for selected cells */
 }
