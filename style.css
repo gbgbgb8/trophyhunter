@@ -82,7 +82,10 @@ body {
 
 #playbox {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    width: 80vmin; /* Adjust the grid size to 80% of the smaller of the viewport width and height */
+    height: 80vmin;
+    grid-template-columns: repeat(5, 1fr); /* Maintain a 5x5 grid */
+    grid-gap: 5px; /* Add a small gap between cells */
     grid-gap: 0; /* Remove the gaps between cells */
     width: 100%;
     padding: var(--spacing);
@@ -100,7 +103,7 @@ body {
     border: 1px solid var(--color-border);
     cursor: pointer;
     user-select: none;
-    font-size: calc(1rem + 3vmin); /* Adjust the font size based on the viewport size */
+    font-size: calc(1rem + 2vmin); /* Adjust the font size based on the viewport size */
     transition: background-color 0.5s ease;
     position: relative; /* Add a relative position */
 }
