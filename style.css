@@ -13,6 +13,10 @@
 
 body {
     background-color: var(--color-background);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
     font-family: Arial, sans-serif;
     color: var(--color-text);
     margin: 0;
@@ -78,7 +82,7 @@ body {
 
 #playbox {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
     grid-gap: 0; /* Remove the gaps between cells */
     width: 100%;
     padding: var(--spacing);
@@ -181,4 +185,12 @@ body {
         max-width: 90vw;
         max-height: 90vw;
     }
+}
+
+
+.control-panel,
+#playbox,
+.game-controls {
+    flex: 1 1 200px;
+    margin: 10px;
 }
