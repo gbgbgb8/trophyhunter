@@ -15,8 +15,7 @@ body {
     background-color: var(--color-background);
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    
     justify-content: space-around;
     flex-wrap: wrap;
     font-family: Arial, sans-serif;
@@ -25,10 +24,8 @@ body {
     padding: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    justify-content: center;
-    align-items: center;
+    
+    
     height: 100vh; /* Force body to take up full viewport height */
     width: 100vw;
 }
@@ -36,8 +33,7 @@ body {
 .control-panel {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    
     align-items: center;
     gap: var(--spacing);
     width: 90vw;
@@ -62,8 +58,7 @@ body {
 
 .game-controls {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    
     gap: var(--spacing);
 }
 
@@ -88,8 +83,8 @@ body {
 
 #playbox {
     display: grid;
-    width: 80vmin; /* Adjust the grid size to 80% of the smaller of the viewport width and height */
-    height: 80vmin;
+    width: 90vmin; /* Adjust the grid size to 90% of the smaller of the viewport width and height */
+    height: 90vmin;
     grid-template-columns: repeat(5, 1fr); /* Maintain a 5x5 grid */
     grid-gap: 5px; /* Add a small gap between cells */
     grid-gap: 0; /* Remove the gaps between cells */
@@ -136,10 +131,8 @@ body {
     background-color: rgba(0, 0, 0, 0.8);
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    justify-content: center;
-    align-items: center;
+    
+    
     z-index: 999;
 }
 
@@ -171,8 +164,7 @@ body {
     overflow-y: auto; /* Add vertical scrolling */
     display: none;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    
     align-items: center;
 }
 
@@ -204,7 +196,7 @@ body {
 .control-panel,
 #playbox,
 .game-controls {
-    flex: 1 1 200px;
+    flex: 0 0 auto;
     margin: 10px;
 }
 
