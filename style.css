@@ -27,15 +27,15 @@ body {
 .control-panel, .game-controls {
     display: flex;
     flex-direction: column;
-    align-items: stretch;  /* Make items fill the container horizontally */
+    align-items: stretch;
     gap: var(--spacing);
-    width: 100vw;  /* Set width to full viewport width */
+    width: 100vw;
     padding: var(--spacing);
     box-sizing: border-box;
 }
 
 .panel {
-    width: 100%;  /* Make the panel fill its container */
+    width: 100%;
     padding: var(--spacing);
     border-radius: 10px;
     background-color: #fff;
@@ -51,7 +51,7 @@ body {
 
 .game-controls {
     flex-direction: row;
-    justify-content: space-between;  /* Space out the buttons evenly */
+    justify-content: space-between;
     gap: 10px;
 }
 
@@ -75,7 +75,7 @@ body {
 }
 
 #playbox {
-    width: 100vw;  /* Set the play area width to the full viewport width */
+    width: 100vw;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-gap: var(--spacing);
@@ -154,6 +154,13 @@ body {
         padding: 8px;
     }
     .cell {
-        font-size: 2.5rem; /* Adjust cell font size to fit better on mobile screens */
+        font-size: 2.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    #playbox {
+        max-width: 650px;
+        margin: 0 auto;
     }
 }
