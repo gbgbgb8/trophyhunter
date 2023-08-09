@@ -182,3 +182,34 @@ body {
         max-height: 90vw;
     }
 }
+
+@media (max-width: 768px) { /* Adjust this value based on where you want the breakpoint to be */
+    .control-panel, .game-controls {
+        padding: 8px; /* Reduce padding */
+    }
+}
+
+#playbox {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 8px; /* Adjust as needed */
+    width: 90vw; /* Adjust as needed */
+    max-width: 600px; /* Adjust as needed */
+}
+
+.cell {
+    width: 100%; /* This ensures each cell takes up the full width of its grid column */
+    aspect-ratio: 1 / 1; /* This ensures each cell is square */
+}
+
+@media (max-width: 768px) {
+    .cell {
+        font-size: 4rem; /* Adjust as needed */
+    }
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
