@@ -52,14 +52,12 @@ body {
 }
 
 .game-controls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: var(--spacing);
+    flex-direction: row; /* Change the direction to row for horizontal arrangement */
+    gap: 10px; /* Adjust gap between buttons */
 }
 
 .button {
-    padding: 10px 20px;
+    padding: 8px 16px; /* Adjust padding for buttons to make them smaller */
     background-color: var(--color-primary);
     color: #fff;
     border: none;
