@@ -52,12 +52,12 @@ body {
 }
 
 .game-controls {
-    flex-direction: row; /* Change the direction to row for horizontal arrangement */
-    gap: 10px; /* Adjust gap between buttons */
+    flex-direction: row;
+    gap: 10px;
 }
 
 .button {
-    padding: 8px 16px; /* Adjust padding for buttons to make them smaller */
+    padding: 8px 16px;
     background-color: var(--color-primary);
     color: #fff;
     border: none;
@@ -154,8 +154,25 @@ body {
 @media (max-width: 768px) {
     .control-panel, .game-controls {
         padding: 8px;
+        width: 100vw; /* Use the entire viewport width for these controls */
     }
+
+    #playbox {
+        width: 100vw; /* Set the play area width to the full viewport width */
+        max-width: none; /* Remove max-width restriction */
+    }
+
+    .scoreboard, .game-controls {
+        flex-direction: column; /* Stack items vertically for better visibility */
+        align-items: center;
+        gap: 10px; /* Adjust the gap between items */
+    }
+
+    .scoreboard div, .game-controls button {
+        font-size: 1.2rem; /* Increase the font size for better readability */
+    }
+
     .cell {
-        font-size: 4rem;
+        font-size: 2.5rem; /* Adjust cell font size to fit better on mobile screens */
     }
 }
