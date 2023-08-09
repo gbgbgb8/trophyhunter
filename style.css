@@ -19,13 +19,13 @@ body {
     padding: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     height: 100vh;
     width: 100vw;
 }
 
-.control-panel {
+.control-panel, .game-controls {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -33,6 +33,7 @@ body {
     width: 90vw;
     max-width: 600px;
     padding: var(--spacing);
+    box-sizing: border-box;
 }
 
 .panel {
@@ -79,15 +80,13 @@ body {
 #playbox {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-gap: 0; /* Remove the gaps between cells */
-    width: 100%;
-    padding: var(--spacing);
-    max-width: 500px; /* Adjust max-width for better fit on smaller screens */
-    max-height: 500px; /* Adjust max-height for better fit on smaller screens */
+    grid-gap: var(--spacing);
+    width: 90vw;
+    max-width: 600px;
+    box-sizing: border-box;
 }
 
 .cell {
-    /* Remove the height and padding properties */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -96,24 +95,11 @@ body {
     border: 1px solid var(--color-border);
     cursor: pointer;
     user-select: none;
-    font-size: 3rem; /* Adjust the font size here */
+    font-size: 3rem;
     transition: background-color 0.5s ease;
-    position: relative; /* Add a relative position */
+    aspect-ratio: 1 / 1;
 }
 
-.cell::before {
-    content: "";
-    padding-top: 100%; /* 1:1 aspect ratio (square) */
-}
-
-.cell > * {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-/* Add new styles for the overlay */
 .overlay {
     position: fixed;
     top: 0;
@@ -130,17 +116,16 @@ body {
 
 .overlay-text {
     color: #fff;
-    font-size: 2.5rem; /* Adjust the font size here for better fit on smaller screens */
+    font-size: 2.5rem;
     text-align: center;
     margin-bottom: 20px;
 }
 
 .countdown {
     color: #fff;
-    font-size: 1.8rem; /* Adjust the font size here for better fit on smaller screens */
+    font-size: 1.8rem;
 }
 
-/* New styles for the instructions popup */
 .instructions-popup {
     position: fixed;
     top: 50%;
@@ -153,8 +138,8 @@ body {
     z-index: 999;
     max-width: 90vw;
     max-height: 90vh;
-    overflow-y: auto; /* Add vertical scrolling */
-    display: none;
+    overflow-y: auto;
+    display: flex;
     flex-direction: column;
     align-items: center;
 }
@@ -168,48 +153,11 @@ body {
     margin-bottom: 10px;
 }
 
-/* Adjust styles for mobile devices */
 @media (max-width: 768px) {
-    .control-panel {
+    .control-panel, .game-controls {
         padding: 8px;
     }
-    .button {
-        font-size: 0.9rem;
-    }
-    #playbox {
-        font-size: 2.5rem;
-        max-width: 90vw;
-        max-height: 90vw;
-    }
-}
-
-@media (max-width: 768px) { /* Adjust this value based on where you want the breakpoint to be */
-    .control-panel, .game-controls {
-        padding: 8px; /* Reduce padding */
-    }
-}
-
-#playbox {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-gap: 8px; /* Adjust as needed */
-    width: 90vw; /* Adjust as needed */
-    max-width: 600px; /* Adjust as needed */
-}
-
-.cell {
-    width: 100%; /* This ensures each cell takes up the full width of its grid column */
-    aspect-ratio: 1 / 1; /* This ensures each cell is square */
-}
-
-@media (max-width: 768px) {
     .cell {
-        font-size: 4rem; /* Adjust as needed */
+        font-size: 4rem;
     }
-}
-
-body {
-    height: 100vh;
-    margin: 0;
-    padding: 0;
 }
